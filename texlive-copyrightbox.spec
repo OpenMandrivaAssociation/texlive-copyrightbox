@@ -23,16 +23,8 @@ The package command \copyrightbox[<placement>]{<image
 command>}{<text>}, which places the text as a copyright notice
 relating to the matter created by the image command.
 
-%pre
-    %{_sbindir}/texlive.post
-
 %post
     %{_sbindir}/texlive.post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-    fi
 
 %postun
     if [ $1 -eq 0 ]; then
@@ -46,7 +38,6 @@ relating to the matter created by the image command.
 %doc %{_texmfdistdir}/doc/latex/copyrightbox/coin.jpg
 %doc %{_texmfdistdir}/doc/latex/copyrightbox/copyrightbox.pdf
 %doc %{_texmfdistdir}/doc/latex/copyrightbox/copyrightbox.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -57,5 +48,3 @@ relating to the matter created by the image command.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
