@@ -6,7 +6,7 @@
 # catalog-version 0.1
 Name:		texlive-copyrightbox
 Version:	0.1
-Release:	9
+Release:	10
 Summary:	Provide copyright notices for images in a document
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/copyrightbox
