@@ -1,6 +1,6 @@
 Name:		texlive-copyrightbox
 Version:	24829
-Release:	1
+Release:	2
 Summary:	Provide copyright notices for images in a document
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/copyrightbox
