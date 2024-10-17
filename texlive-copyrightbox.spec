@@ -3,7 +3,7 @@ Version:	24829
 Release:	2
 Summary:	Provide copyright notices for images in a document
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/copyrightbox
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/copyrightbox
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/copyrightbox.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/copyrightbox.doc.r%{version}.tar.xz
