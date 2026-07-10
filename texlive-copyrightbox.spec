@@ -1,44 +1,24 @@
-Name:		texlive-copyrightbox
-Version:	24829
-Release:	2
+%global tl_name copyrightbox
+%global tl_revision 24829
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.1
+Release:	%{tl_revision}.1
 Summary:	Provide copyright notices for images in a document
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/copyrightbox
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/copyrightbox.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/copyrightbox.doc.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/copyrightbox.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/copyrightbox.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package command \copyrightbox[<placement>]{<image
-command>}{<text>}, which places the text as a copyright notice
-relating to the matter created by the image command.
+The package command \copyrightbox[<placement>]{<image command>}{<text>},
+which places the text as a copyright notice relating to the matter
+created by the image command.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/copyrightbox/copyrightbox.sty
-%doc %{_texmfdistdir}/doc/latex/copyrightbox/README
-%doc %{_texmfdistdir}/doc/latex/copyrightbox/coin.jpg
-%doc %{_texmfdistdir}/doc/latex/copyrightbox/copyrightbox.pdf
-%doc %{_texmfdistdir}/doc/latex/copyrightbox/copyrightbox.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
